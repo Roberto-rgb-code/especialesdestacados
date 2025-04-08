@@ -28,7 +28,7 @@ class EspecialController extends Controller
             'descripcion' => 'required|string',
             'categoria' => 'required|in:Textil,Promocional,Otros',
             'tipo' => 'required|string|max:255',
-            'fotos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'fotos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
         ]);
 
         $especial = Especial::create($validatedData);
@@ -56,7 +56,7 @@ class EspecialController extends Controller
             'descripcion' => 'sometimes|string',
             'categoria' => 'sometimes|in:Textil,Promocional,Otros',
             'tipo' => 'sometimes|string|max:255',
-            'fotos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'fotos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
         ]);
 
         $especial = Especial::findOrFail($id);
